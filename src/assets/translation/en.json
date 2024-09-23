@@ -1,0 +1,17 @@
+{
+    "language": "English",
+    "screens": {
+        "onboarding": {
+            "text": {
+                "skip": "Skip",
+                "next": "Next",
+                "get_started": "GET STARTED",
+                "insturction1":"Keep track of your daily cash transactions",
+                "insturction2":"Check your older entries and download reports"
+            }
+        },
+        "languageSelection": {
+            "title":"Select your language"
+        }
+    }
+}

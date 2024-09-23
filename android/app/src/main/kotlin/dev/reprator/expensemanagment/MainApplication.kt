@@ -1,4 +1,4 @@
-package com.expensemanagmentreactnative
+package dev.reprator.expensemanagment
 
 import android.app.Application
 import com.facebook.react.PackageList

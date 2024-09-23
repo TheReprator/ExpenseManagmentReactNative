@@ -1,0 +1,17 @@
+{
+    "language": "Arabic",
+    "screens": {
+        "onboarding": {
+            "text": {
+                "skip": "يتخطى",
+                "next": "التالي",
+                "get_started": "ابدأ",
+                "insturction1":"تتبع المعاملات النقدية اليومية الخاصة بك",
+                "insturction2":"تحقق من إدخالاتك القديمة وقم بتنزيل التقارير"
+            }
+        },
+        "languageSelection": {
+            "title":"اختر لغتك"
+        }
+    }
+}

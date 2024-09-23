@@ -6,4 +6,8 @@
         <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
     </style>
 
+    <!-- Splash screen theme -->
+    <style name="AppTheme.SplashScreenTheme">
+        <item name="android:windowBackground">@drawable/app_background</item>
+    </style>
 </resources>

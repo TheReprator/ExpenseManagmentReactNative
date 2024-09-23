@@ -1,0 +1,17 @@
+{
+    "language": "Hind",
+    "screens": {
+        "onboarding": {
+            "text": {
+                "skip": "छोडना",
+                "next": "अगला",
+                "get_started": "शुरू हो जाओ",
+                "insturction1":"अपने दैनिक नकद लेनदेन पर नज़र रखें",
+                "insturction2":"अपनी पुरानी प्रविष्टियाँ जाँचें और रिपोर्ट डाउनलोड करें"
+            }
+        },
+        "languageSelection": {
+            "title":"अपनी भाषा का चयन करें"
+        }
+    }
+}
