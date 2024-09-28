@@ -1,12 +1,14 @@
 import React, { FC, useRef, useState } from 'react';
 import {
+  ActivityIndicator,
   Dimensions,
-  Image,
   StyleSheet,
   View,
   ViewToken,
 } from 'react-native';
-import Animated, { scrollTo, useAnimatedRef, useAnimatedScrollHandler, useDerivedValue, useSharedValue } from 'react-native-reanimated';
+import FastImage from 'react-native-fast-image';
+import Animated, {  useAnimatedRef} from 'react-native-reanimated';
+import { COLORS } from '../utils/theme/typography';
 
 const { width } = Dimensions.get('window');
 
@@ -14,7 +16,7 @@ const BORDER_RADIUS = 20;
 
 export interface ImageCarouselProps {
   data: ImageCarouselItem[];
-  pageChangeCallback: (index:number) => void
+  pageChangeCallback: (index: number) => void
 }
 
 const HorizontalSeparatorComponent = () => {
@@ -26,12 +28,43 @@ const HorizontalSeparatorComponent = () => {
 }
 
 const CarouselImageComponent = ({ imageUrl }: { imageUrl: string }) => {
+
+  const [isImageLoading, setImageLoading] = useState<boolean>(true)
+
   return (
+
     <View style={styles.itemImageContainer}>
-      <Image source={{ uri: imageUrl }} style={styles.itemImage} />
+
+      <View>
+        <FastImage
+          style={[styles.itemImage, { opacity: isImageLoading ? 0 : 1 }]}
+          source={{
+            uri: imageUrl
+          }}
+          resizeMode={FastImage.resizeMode.stretch}
+          onLoadStart={() => {
+            console.log("imageLogCarousel, load started")
+            setImageLoading(true)
+          }}
+          onLoadEnd={() => {
+            console.log("imageLogCarousel, load end")
+            setImageLoading(false)
+          }}
+          onError={() => {
+            console.log("imageLogCarousel, load failed")
+          }}
+        />
+        {
+          isImageLoading && <ActivityIndicator style={{
+            width: '100%',
+            height: '100%', position: 'absolute'
+          }} size="large" color={COLORS.primaryRedHex} />
+        }
+      </View>
     </View>
   )
 }
+
 
 
 const ImageCarousel: FC<ImageCarouselProps> = ({ data, pageChangeCallback }) => {
